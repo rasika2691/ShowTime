@@ -20,7 +20,6 @@ public class MovieServiceImpl implements MovieService {
 	@Override
 	@Transactional(readOnly = true)
 	public List<Movie> findAll() {
-		// TODO Auto-generated method stub
 		return repository.findAll();
 	}
 
@@ -66,6 +65,61 @@ public class MovieServiceImpl implements MovieService {
 			throw new EntityNotFoundException("Movie not present!");
 		}
 		repository.delete(mv);
+	}
+
+	@Override
+	public List<Movie> findByType(String type) {
+		// TODO Auto-generated method stub
+		
+		return repository.findByType(type);
+	}
+
+	@Override
+	public List<Movie> findByYear(int year) {
+		// TODO Auto-generated method stub
+		return repository.findByYear(year);
+	}
+
+	@Override
+	public List<Movie> findByGenre(String genre) {
+		// TODO Auto-generated method stub
+		return repository.findByGenre(genre);
+	}
+
+	@Override
+	public Movie findByTitle(String title) {
+		// TODO Auto-generated method stub
+		return repository.findByTitle(title);
+	}
+
+	@Override
+	public List<Movie> sortByImdbRatings() {
+		// TODO Auto-generated method stub
+		return repository.sortByImdbRatings();
+	}
+
+	@Override
+	public List<Movie> sortByYear() {
+		// TODO Auto-generated method stub
+		return repository.sortByYear();
+	}
+
+	@Override
+	public List<Movie> sortByImdbVotes() {
+		// TODO Auto-generated method stub
+		return repository.sortByImdbVotes();
+	}
+
+	@Override
+	public List<Movie> topRatedMovies() {
+		// TODO Auto-generated method stub
+		return repository.topRatedMovies();
+	}
+
+	@Override
+	public List<Movie> topRatedSeries() {
+		// TODO Auto-generated method stub
+		return repository.topRatedSeries();
 	}
 
 }
