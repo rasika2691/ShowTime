@@ -17,6 +17,8 @@ public class MovieController {
 	@Autowired
 	private MovieService service;
 	
+	//CRUD operation
+	
 	@RequestMapping (method = RequestMethod.GET)
 	public List<Movie> findAll(){
 		return service.findAll();
@@ -42,5 +44,53 @@ public class MovieController {
 		service.delete(mId);
 	}
 	
+	//Search operation
 	
+	@RequestMapping(method=RequestMethod.GET, path="findbytype/{type}")
+	public List<Movie> findByType(@PathVariable("type") String type){
+		return service.findByType(type);
+	}
+	
+	@RequestMapping(method=RequestMethod.GET, path="findbyyear/{year}")
+	public List<Movie> findByYear(@PathVariable("year") int year){
+		return service.findByYear(year);
+		}
+	
+	@RequestMapping(method=RequestMethod.GET, path="findbygenre/{genre}")
+	public List<Movie> findByGenre(@PathVariable("genre") String genre){
+		return service.findByGenre(genre);
+	}
+	
+	@RequestMapping(method=RequestMethod.GET, path="findbytitle/{title}")
+	public Movie findByTitle(@PathVariable("title") String title){
+		return service.findByTitle(title);
+	
+	}
+	
+	// Sort Operations
+	
+	@RequestMapping(method=RequestMethod.GET, path="sortbyimdbratings")
+	public List<Movie> sortByImdbRating(){
+		return service.sortByImdbRatings();
+	}
+	
+	@RequestMapping(method=RequestMethod.GET, path="sortbyyears")	
+	public List<Movie> sortByYear(){
+		return service.sortByYear();
+	}
+	
+	@RequestMapping(method=RequestMethod.GET, path="sortbyimdbvotes")
+	public List<Movie> sortByImdbVote(){
+		return service.sortByImdbVotes();
+	}
+ 	
+	@RequestMapping(method=RequestMethod.GET, path="topmovies")
+	public List<Movie> topRatedMovies(){
+		return service.topRatedMovies();
+	}
+	
+	@RequestMapping(method=RequestMethod.GET, path="topseries")
+	public List<Movie> topRatedSeries(){
+		return service.topRatedSeries();
+	}
 }
