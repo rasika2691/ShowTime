@@ -64,6 +64,102 @@ public class MovieRepositoryImpl implements MovieRepository {
 		em.remove(mv);
 	}
 
+	@Override
+	public List<Movie> findByType(String type) {
+		// TODO Auto-generated method stub
+		TypedQuery<Movie>query =em.createNamedQuery("Movie.findByType",Movie.class);
+		query.setParameter("pType", type);
+		List<Movie>movies = query.getResultList();
+		if(movies != null && movies.size()>0){
+			return movies;
+		}
+		return null;
+	}
+
+	@Override
+	public List<Movie> findByYear(int year) {
+		// TODO Auto-generated method stub
+		TypedQuery<Movie> query=em.createNamedQuery("Movie.findByYear", Movie.class);
+		query.setParameter("pYear", year);
+		List<Movie> movies=query.getResultList();
+		
+		if(movies!=null && movies.size()>0){
+			return movies;
+		}
+		return null;
+	}
+
+	@Override
+	public List<Movie> findByGenre(String genre) {
+		// TODO Auto-generated method stub
+		TypedQuery<Movie> query=em.createNamedQuery("Movie.findByGenre",Movie.class);
+		query.setParameter("pGenre", genre);
+		List<Movie> movies=query.getResultList();
+		if(movies!=null && movies.size()>0)
+		{
+			return movies;
+		}
+		return null;
+	}
+
+	@Override
+	public List<Movie> sortByImdbRatings() {
+		// TODO Auto-generated method stub
+		TypedQuery<Movie> query=em.createNamedQuery("Movie.sortByImdbRatings",Movie.class);
+		List<Movie> movies=query.getResultList();
+		
+		if(movies!=null && movies.size()>0)
+		{
+			return movies;
+		}
+		return null;
+	}
+
+	@Override
+	public List<Movie> sortByYear() {
+		// TODO Auto-generated method stub
+		TypedQuery<Movie> query=em.createNamedQuery("Movie.sortByYear",Movie.class);
+		List<Movie> movies=query.getResultList();
+		
+		if(movies!=null && movies.size()>0){
+			return movies;
+		}
+		return null;
+	}
+
+	@Override
+	public List<Movie> sortByImdbVotes() {
+		// TODO Auto-generated method stub
+		TypedQuery<Movie> query=em.createNamedQuery("Movie.sortByImdbVotes",Movie.class);
+		List<Movie> movies=query.getResultList();
+		
+		if(movies!=null && movies.size()>0){
+			return movies;
+		}
+		return null;
+	}
+
+	@Override
+	public List<Movie> topRatedMovies() {
+		// TODO Auto-generated method stub
+		TypedQuery<Movie>query = em.createNamedQuery("movie.topRatedMovies",Movie.class);
+		query.setParameter("pType", "movie");
+		query.setParameter("pLimit", 9.0);
+		List<Movie>movies = query.getResultList();
+		return movies;
+	}
+
+	@Override
+	public List<Movie> topRatedSeries() {
+		// TODO Auto-generated method stub
+		TypedQuery<Movie> query=em.createNamedQuery("Movie.topRatedSeries",Movie.class);
+		query.setParameter("pType", "series");
+		query.setParameter("pLimit", 9.0);
+		List<Movie> movies=query.getResultList();
+		return movies;
+		
+	}
+
 	
 
 	
