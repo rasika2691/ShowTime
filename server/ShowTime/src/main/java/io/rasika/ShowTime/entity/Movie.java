@@ -1,6 +1,5 @@
 package io.rasika.ShowTime.entity;
 
-import java.util.Date;
 import java.util.UUID;
 
 import javax.persistence.Column;
@@ -10,8 +9,17 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 @Entity
 @NamedQueries({
-@NamedQuery(name="Movie.findAll", query="SELECT m FROM Movie m"), 
-@NamedQuery(name="Movie.findByTitle",query= "SELECT m fROM Movie m WHERE m.title=:pTitle" )
+@NamedQuery(name="Movie.findAll", query="SELECT m FROM Movie m ORDER BY title ASC"), 
+@NamedQuery(name="Movie.findByTitle",query= "SELECT m fROM Movie m WHERE m.title=:pTitle" ),
+@NamedQuery(name="Movie.findByType", query="SELECT m from Movie m WHERE m.type=:pType"),
+@NamedQuery(name="Movie.findByYear", query="SELECT m from Movie m WHERE m.year=:pYear"),
+@NamedQuery(name="Movie.findByGenre", query="SELECT m from Movie m WHERE m.genre=:pGenre"),
+@NamedQuery(name="Movie.sortByImdbRatings", query="SELECT m from Movie m ORDER BY imdbRating DESC"),
+@NamedQuery(name="Movie.sortByYear", query="SELECT m from Movie m ORDER BY year DESC"),
+@NamedQuery(name="Movie.sortByImdbVotes", query="SELECT m from Movie m ORDER BY imdbVotes DESC"),
+@NamedQuery(name="Movie.topRatedovies", query="SELECT m from Movie m WHERE m.type=:pType AND m.imdbRating > :pLimit ORDER BY imdbRating DESC"),
+@NamedQuery(name="Movie.topRatedSeries", query="SELECT m from Movie m WHERE m.type=:pType AND m.imdbRating > :pLimit ORDER BY imdbRating DESC")
+
 })
 public class Movie {
 
@@ -19,7 +27,7 @@ public class Movie {
 	private String MovieId;
 	@Column(unique = true)
 	private String title;
-	private Date releaseYear;
+	private int year;
 	private String rated;
 	private String time;
 	private String genere;
@@ -32,8 +40,8 @@ public class Movie {
 	private String awards;
 	private String poster;
 	private String metaScore;
-	private String imdbRating;
-	private String imdbVotes;
+	private double imdbRating;
+	private long imdbVotes;
 	private String imdbId;
 	private String type;
 	
@@ -67,12 +75,15 @@ public class Movie {
 		this.title = title;
 	}
 
-	public Date getReleaseYear() {
-		return releaseYear;
+	
+	public int getYear() {
+		return year;
 	}
-	public void setReleaseYear(Date releaseYear) {
-		this.releaseYear = releaseYear;
+
+	public void setYear(int year) {
+		this.year = year;
 	}
+
 	public String getRated() {
 		return rated;
 	}
@@ -135,18 +146,23 @@ public class Movie {
 	public void setMetaScore(String metaScore) {
 		this.metaScore = metaScore;
 	}
-	public String getImdbRating() {
+	
+	public double getImdbRating() {
 		return imdbRating;
 	}
-	public void setImdbRating(String imdbRating) {
+
+	public void setImdbRating(double imdbRating) {
 		this.imdbRating = imdbRating;
 	}
-	public String getImdbVotes() {
+
+	public long getImdbVotes() {
 		return imdbVotes;
 	}
-	public void setImdbVotes(String imdbVotes) {
+
+	public void setImdbVotes(long imdbVotes) {
 		this.imdbVotes = imdbVotes;
 	}
+
 	public String getImdbId() {
 		return imdbId;
 	}
