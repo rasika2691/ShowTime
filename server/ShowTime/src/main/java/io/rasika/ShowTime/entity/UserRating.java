@@ -1,8 +1,10 @@
 package io.rasika.ShowTime.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
+@Table
 public class UserRating {
 	
 	private String Rating_id;

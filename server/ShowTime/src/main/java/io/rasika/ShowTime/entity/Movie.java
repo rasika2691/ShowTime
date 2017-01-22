@@ -7,7 +7,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 @Entity
+@Table
 @NamedQueries({
 @NamedQuery(name="Movie.findAll", query="SELECT m FROM Movie m ORDER BY title ASC"), 
 @NamedQuery(name="Movie.findByTitle",query= "SELECT m fROM Movie m WHERE m.title=:pTitle" ),
