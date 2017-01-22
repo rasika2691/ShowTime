@@ -1,14 +1,22 @@
 package io.rasika.ShowTime.entity;
 
+import java.util.UUID;
+
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table
 public class Comment {
-
+   
+	@Id
 	private String CommentId;
-	private String MovieId;
-	private String Comments;
-	private String UserId;
+	private String Comment;
+	
+	public Comment(){
+		this.CommentId = UUID.randomUUID().toString();
+	}
 	
 	public String getCommentId() {
 		return CommentId;
@@ -16,24 +24,15 @@ public class Comment {
 	public void setCommentId(String commentId) {
 		CommentId = commentId;
 	}
-	public String getMovieId() {
-		return MovieId;
+
+	public String getComment() {
+		return Comment;
 	}
-	public void setMovieId(String movieId) {
-		MovieId = movieId;
+
+	public void setComment(String comment) {
+		Comment = comment;
 	}
-	public String getComments() {
-		return Comments;
-	}
-	public void setComments(String comments) {
-		Comments = comments;
-	}
-	public String getUserId() {
-		return UserId;
-	}
-	public void setUserId(String userId) {
-		UserId = userId;
-	}
+	
 	
 	
 	
