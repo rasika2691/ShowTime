@@ -2,7 +2,7 @@ package io.rasika.ShowTime.service;
 
 import java.util.List;
 
-import io.rasika.ShowTime.entity.Comment;
+
 import io.rasika.ShowTime.entity.Movie;
 import io.rasika.ShowTime.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
