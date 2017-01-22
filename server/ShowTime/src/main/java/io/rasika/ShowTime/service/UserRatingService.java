@@ -9,6 +9,10 @@ import io.rasika.ShowTime.entity.UserRating;
 public interface UserRatingService {
 
 	public List<UserRating> findAll();
+	
+	public List<UserRating> findAllUserRatingsByMovieId(String id);
+	
 	public UserRating create(UserRating UserRat);
 	
+	public double findAvgUserRatingsByMovieId(String id);
 }
