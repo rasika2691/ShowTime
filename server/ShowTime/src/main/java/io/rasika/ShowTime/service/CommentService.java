@@ -10,7 +10,14 @@ import io.rasika.ShowTime.entity.Comment;
 public interface CommentService {
 
 	public List<Comment> findAll();
+	
+    public List<Comment> findAllCommentsByMovieId(String id);
+    
+	public Comment findOne(String id);
+	
 	public Comment create(Comment cmt);
+	
 	public Comment update(String cmtId,  Comment cmt);
+	
 	public void delete(String cmtId);
 }

@@ -10,7 +10,8 @@ public interface CommentRepository {
 
 	public List<Comment> findAll();
 	public Comment findOne(String cmtId);
+	public List<Comment> findAllCommentsByMovieId(String id);
 	public Comment create(Comment cmt);
-	public Comment update(String cmtId,  Comment cmt);
-	public void delete(String cmtId);
+	public Comment update(Comment cmt);
+	public void delete(Comment cmt);
 }
