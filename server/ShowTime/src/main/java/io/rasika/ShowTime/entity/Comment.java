@@ -61,6 +61,11 @@ public class Comment {
 	public void setComment(String comment) {
 		Comment = comment;
 	}
+
+	@Override
+	public String toString() {
+		return "Comment [CommentId=" + CommentId + ", Comment=" + Comment + ", mv=" + mv + ", ur=" + ur + "]";
+	}
 	
 	
 	
