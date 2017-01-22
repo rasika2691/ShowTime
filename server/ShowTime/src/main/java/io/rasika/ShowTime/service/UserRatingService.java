@@ -10,6 +10,8 @@ public interface UserRatingService {
 
 	public List<UserRating> findAll();
 	
+	public UserRating findOne(String id);
+	
 	public List<UserRating> findAllUserRatingsByMovieId(String id);
 	
 	public UserRating create(UserRating UserRat);

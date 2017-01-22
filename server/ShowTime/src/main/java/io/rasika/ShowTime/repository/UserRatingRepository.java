@@ -9,7 +9,16 @@ import io.rasika.ShowTime.entity.UserRating;
 public interface UserRatingRepository {
 
 	public List<UserRating> findAll();
+	
 	public UserRating create(UserRating UserRat);
-	public UserRating update(String UserRatId,  UserRating UserRat);
-	public void delete(String UserRatId);
+	
+	public UserRating findOne(String id);
+	
+	public List<UserRating> findAllUserRatingsByMovieId(String id);
+	
+	public UserRating update(UserRating UserRat);
+	
+	public double findAvgUserRatingsByMovieId(String id);
+	
+	public void delete(UserRating UserRat);
 }
