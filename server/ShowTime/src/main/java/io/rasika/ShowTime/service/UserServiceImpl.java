@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		User ur = repository.findOne(uId);
 		if(ur == null){
-			throw new EntityNotFoundException("Employee not found");
+			throw new EntityNotFoundException("User not found");
 		}
 		return ur;
 	}
@@ -36,7 +36,7 @@ public class UserServiceImpl implements UserService {
 		// TODO Auto-generated method stub
 		User existing = repository.findByEmail(ur.getEmail());
 		if(existing != null){
-			throw new BadRequestException("Employee already exist");
+			throw new BadRequestException("Email is already in use:" +ur.getEmail());
 		}
 		return repository.create(ur);
 	}
@@ -48,7 +48,7 @@ public class UserServiceImpl implements UserService {
 		if(existing == null){
 			throw new EntityNotFoundException("User Not found!");
 		}
-		return repository.update(uId, ur);
+		return repository.update(ur);
 	}
 
 	@Override
@@ -59,7 +59,7 @@ public class UserServiceImpl implements UserService {
 		if(ur == null){
 			throw new EntityNotFoundException("User Not Found");
 		}
-		 repository.delete(uId);
+		 repository.delete(ur);
 	}
 
 }
