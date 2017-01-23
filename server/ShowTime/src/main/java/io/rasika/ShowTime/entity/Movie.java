@@ -31,6 +31,7 @@ public class Movie {
 	private String title;
 	private int year;
 	private String rated;
+	private String released;
 	private String time;
 	private String genre;
 	private String director;
@@ -92,6 +93,15 @@ public class Movie {
 	public void setRated(String rated) {
 		this.rated = rated;
 	}
+	
+	public String getReleased() {
+		return released;
+	}
+
+	public void setReleased(String released) {
+		this.released = released;
+	}
+
 	public String getTime() {
 		return time;
 	}
