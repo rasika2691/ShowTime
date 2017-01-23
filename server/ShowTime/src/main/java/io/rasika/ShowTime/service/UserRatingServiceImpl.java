@@ -65,18 +65,18 @@ public class UserRatingServiceImpl implements UserRatingService {
 		
 	}
 
-	@Override
-	public double findAvgUserRatingsByMovieId(String id) {
-		// TODO Auto-generated method stub
-        List<UserRating> existing=repository.findAllUserRatingsByMovieId(id);
-		
-		if(existing.size()==0){
-
-			throw new EntityNotFoundException("User ratings for the id:"+id+" Not found");
-					}
-		
-		return repository.findAvgUserRatingsByMovieId(id);
- 	}
+//	@Override
+//	public double findAvgUserRatingsByMovieId(String id) {
+//		// TODO Auto-generated method stub
+//        List<UserRating> existing=repository.findAllUserRatingsByMovieId(id);
+//		
+//		if(existing.size()==0){
+//
+//			throw new EntityNotFoundException("User ratings for the id:"+id+" Not found");
+//					}
+//		
+//		return repository.findAvgUserRatingsByMovieId(id);
+// 	}
 
 	@Override
 	public UserRating findOne(String id) {

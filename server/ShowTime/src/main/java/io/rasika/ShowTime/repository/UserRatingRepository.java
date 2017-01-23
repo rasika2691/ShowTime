@@ -18,7 +18,7 @@ public interface UserRatingRepository {
 	
 	public UserRating update(UserRating UserRat);
 	
-	public double findAvgUserRatingsByMovieId(String id);
+//	public double findAvgUserRatingsByMovieId(String id);
 	
 	public void delete(UserRating UserRat);
 }

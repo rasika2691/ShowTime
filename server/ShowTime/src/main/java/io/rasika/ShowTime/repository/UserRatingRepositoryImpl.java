@@ -41,14 +41,15 @@ public class UserRatingRepositoryImpl implements UserRatingRepository {
 		return query.getResultList();
 	}
 
-	@Override
-	public double findAvgUserRatingsByMovieId(String id) {
-		// TODO Auto-generated method stub
-		TypedQuery<Double> query=em.createNamedQuery("UserRating.findAvgUserRatingsByMovieId",Double.class);
-		query.setParameter("pMovieId", id);
-		double avg=query.getSingleResult();
-		return avg;
-	}
+//	@Override
+//	public double findAvgUserRatingsByMovieId(String id) {
+//		// TODO Auto-generated method stub
+//		TypedQuery<Double> query=em.createNamedQuery("UserRating.findAvgUserRatingsByMovieId",Double.class);
+//		query.setParameter("pMovieId", id);
+//		double avg=query.getSingleResult();
+//		return avg;
+//		return null;
+//	}
 
 	@Override
 	public UserRating update(UserRating UserRat) {

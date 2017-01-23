@@ -16,5 +16,5 @@ public interface UserRatingService {
 	
 	public UserRating create(UserRating UserRat);
 	
-	public double findAvgUserRatingsByMovieId(String id);
+	//public double findAvgUserRatingsByMovieId(String id);
 }
