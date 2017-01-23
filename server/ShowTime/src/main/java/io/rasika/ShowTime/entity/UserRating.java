@@ -18,7 +18,6 @@ public class UserRating {
 	
 	@Id
 	private String RatingId;
-	private String MovieId;
 	private int Rating;
 	
 	@OneToOne
@@ -33,12 +32,7 @@ public class UserRating {
 	public void setRatingId(String ratingId) {
 		RatingId = ratingId;
 	}
-	public String getMovieId() {
-		return MovieId;
-	}
-	public void setMovieId(String movieId) {
-		MovieId = movieId;
-	}
+	
 	public int getRating() {
 		return Rating;
 	}
