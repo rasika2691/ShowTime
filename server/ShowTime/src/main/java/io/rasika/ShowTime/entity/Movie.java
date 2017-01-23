@@ -11,7 +11,7 @@ import javax.persistence.Table;
 @Entity
 @Table
 @NamedQueries({
-@NamedQuery(name="Movie.findAll", query="SELECT m FROM Movie m ORDER BY title ASC"), 
+@NamedQuery(name="Movie.findAll", query="SELECT m FROM Movie m ORDER BY m.title ASC"), 
 @NamedQuery(name="Movie.findByTitle",query= "SELECT m fROM Movie m WHERE m.title=:pTitle" ),
 @NamedQuery(name="Movie.findByType", query="SELECT m from Movie m WHERE m.type=:pType"),
 @NamedQuery(name="Movie.findByYear", query="SELECT m from Movie m WHERE m.year=:pYear"),
@@ -19,8 +19,8 @@ import javax.persistence.Table;
 @NamedQuery(name="Movie.sortByImdbRatings", query="SELECT m from Movie m ORDER BY m.imdbRating DESC"),
 @NamedQuery(name="Movie.sortByYear", query="SELECT m from Movie m ORDER BY m.year DESC"),
 @NamedQuery(name="Movie.sortByImdbVotes", query="SELECT m from Movie m ORDER BY m.imdbVotes DESC"),
-@NamedQuery(name="Movie.topRatedMovies", query="SELECT m from Movie m WHERE m.type=:pType AND m.imdbRating > :pLimit ORDER BY imdbRating DESC"),
-@NamedQuery(name="Movie.topRatedSeries", query="SELECT m from Movie m WHERE m.type=:pType AND m.imdbRating > :pLimit ORDER BY imdbRating DESC")
+@NamedQuery(name="Movie.topRatedMovies", query="SELECT m from Movie m WHERE m.type=:pType AND m.imdbRating > :pLimit ORDER BY m.imdbRating DESC"),
+@NamedQuery(name="Movie.topRatedSeries", query="SELECT m from Movie m WHERE m.type=:pType AND m.imdbRating > :pLimit ORDER BY m.imdbRating DESC")
 
 })
 public class Movie {
