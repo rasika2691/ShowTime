@@ -144,7 +144,7 @@ public class MovieRepositoryImpl implements MovieRepository {
 		// TODO Auto-generated method stub
 		TypedQuery<Movie>query = em.createNamedQuery("movie.topRatedMovies",Movie.class);
 		query.setParameter("pType", "movie");
-		query.setParameter("pLimit", 9.0);
+		query.setParameter("pLimit", 8.0);
 		List<Movie>movies = query.getResultList();
 		return movies;
 	}
