@@ -10,9 +10,9 @@ import javax.persistence.Table;
 @Entity
 @Table
 @NamedQueries({
-	@NamedQuery(name="UserRating.findAll", query="SELECT ur from UserRating ur ORDER BY ur.UserRat desc"),
-	@NamedQuery(name="UserRating.findAllUserRatingsByMovieId", query="SELECT ur from UserRating ur ORDER BY ur.UserRat desc"),
-	//@NamedQuery(name="UserRating.findAvgUserRatingsByMovieId", query="SELECT avg(ur.userRating) from UserRating ur WHERE ur.movie.id=:pMovieId")
+	@NamedQuery(name="UserRating.findAll", query="SELECT ur from UserRating ur ORDER BY ur.Rating desc"),
+	@NamedQuery(name="UserRating.findAllUserRatingsByMovieId", query="SELECT ur from UserRating ur ORDER BY ur.Rating desc"),
+	//@NamedQuery(name="UserRating.findAvgUserRatingsByMovieId", query="SELECT avg(ur.Rating) from UserRating ur WHERE ur.movie.id=:pMovieId")
 })
 public class UserRating {
 	
