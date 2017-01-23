@@ -68,6 +68,7 @@ public class MovieServiceImpl implements MovieService {
 	}
 
 	@Override
+	@Transactional
 	public List<Movie> findByType(String type) {
 		// TODO Auto-generated method stub
 		
@@ -75,12 +76,14 @@ public class MovieServiceImpl implements MovieService {
 	}
 
 	@Override
+	@Transactional
 	public List<Movie> findByYear(int year) {
 		// TODO Auto-generated method stub
 		return repository.findByYear(year);
 	}
 
 	@Override
+	@Transactional
 	public List<Movie> findByGenre(String genre) {
 		// TODO Auto-generated method stub
 		return repository.findByGenre(genre);

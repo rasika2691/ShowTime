@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import io.rasika.ShowTime.entity.User;
 import io.rasika.ShowTime.exception.BadRequestException;
 import io.rasika.ShowTime.exception.EntityNotFoundException;
 import io.rasika.ShowTime.repository.UserRepository;
 @Service
+@Transactional
 public class UserServiceImpl implements UserService {
 
 	@Autowired 

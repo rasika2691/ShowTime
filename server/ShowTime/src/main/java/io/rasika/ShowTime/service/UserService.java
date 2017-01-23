@@ -3,9 +3,11 @@ package io.rasika.ShowTime.service;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import io.rasika.ShowTime.entity.User;
 @Service
+@Transactional
 public interface UserService {
 
 	public List<User> findAll();
