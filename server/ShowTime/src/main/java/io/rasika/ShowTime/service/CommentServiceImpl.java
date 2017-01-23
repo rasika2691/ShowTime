@@ -60,22 +60,22 @@ public class CommentServiceImpl implements CommentService {
 	@Transactional
 	public Comment create(Comment cmt) {
 		// TODO Auto-generated method stub
-		String movieId= cmt.getMv().getMovieId();
-		String userId=cmt.getUr().getUserId();
-		
-		Movie movie=movieService.findOne(movieId);
-		User user=userService.findOne(userId);
-		
-		if(movie==null){
-			throw new EntityNotFoundException("Movie with id:"+movieId+" Not found");
-		}
-		
-		if(user==null){
-			throw new EntityNotFoundException("User with id:"+userId+" Not found");
-		}
-		
-		cmt.setMv(movie);
-		cmt.setUr(user);
+//		String movieId= cmt.getMv().getMovieId();
+//		String userId=cmt.getUr().getUserId();
+//		
+//		Movie movie=movieService.findOne(movieId);
+//		User user=userService.findOne(userId);
+//		
+//		if(movie==null){
+//			throw new EntityNotFoundException("Movie with id:"+movieId+" Not found");
+//		}
+//		
+//		if(user==null){
+//			throw new EntityNotFoundException("User with id:"+userId+" Not found");
+//		}
+//		
+//		cmt.setMv(movie);
+//		cmt.setUr(user);
 		return repository.create(cmt);
 	}
 
