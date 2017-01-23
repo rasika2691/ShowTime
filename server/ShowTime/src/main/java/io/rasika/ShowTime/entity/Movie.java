@@ -32,7 +32,7 @@ public class Movie {
 	private int year;
 	private String rated;
 	private String time;
-	private String genere;
+	private String genre;
 	private String director;
 	private String writer;
 	private String actor;
@@ -98,13 +98,15 @@ public class Movie {
 	public void setTime(String time) {
 		this.time = time;
 	}
-	public String getGenere() {
-		return genere;
-	}
-	public void setGenere(String genere) {
-		this.genere = genere;
-	}
 	
+	public String getGenre() {
+		return genre;
+	}
+
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
+
 	public String getDirector() {
 		return director;
 	}
