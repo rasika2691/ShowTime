@@ -1,5 +1,7 @@
 package io.rasika.ShowTime.entity;
 
+import java.util.UUID;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -21,6 +23,10 @@ public class User {
 	private String email;
 	private String CommentId;
 	private String password;
+	
+	public User(){
+		this.UserId = UUID.randomUUID().toString();
+	}
 	
 	public String getUserId() {
 		return UserId;
