@@ -5,7 +5,7 @@
   <groupId>io.rasika</groupId>
   <artifactId>ShowTime</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
 
   <name>ShowTime</name>
   <url>http://maven.apache.org</url>
