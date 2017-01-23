@@ -142,7 +142,7 @@ public class MovieRepositoryImpl implements MovieRepository {
 	@Override
 	public List<Movie> topRatedMovies() {
 		// TODO Auto-generated method stub
-		TypedQuery<Movie>query = em.createNamedQuery("movie.topRatedMovies",Movie.class);
+		TypedQuery<Movie>query = em.createNamedQuery("Movie.topRatedMovies",Movie.class);
 		query.setParameter("pType", "movie");
 		query.setParameter("pLimit", 8.0);
 		List<Movie>movies = query.getResultList();
@@ -154,7 +154,7 @@ public class MovieRepositoryImpl implements MovieRepository {
 		// TODO Auto-generated method stub
 		TypedQuery<Movie> query=em.createNamedQuery("Movie.topRatedSeries",Movie.class);
 		query.setParameter("pType", "series");
-		query.setParameter("pLimit", 9.0);
+		query.setParameter("pLimit", 8.0);
 		List<Movie> movies=query.getResultList();
 		return movies;
 		
