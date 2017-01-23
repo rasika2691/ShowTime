@@ -16,9 +16,9 @@ import javax.persistence.Table;
 @NamedQuery(name="Movie.findByType", query="SELECT m from Movie m WHERE m.type=:pType"),
 @NamedQuery(name="Movie.findByYear", query="SELECT m from Movie m WHERE m.year=:pYear"),
 @NamedQuery(name="Movie.findByGenre", query="SELECT m from Movie m WHERE m.genre=:pGenre"),
-@NamedQuery(name="Movie.sortByImdbRatings", query="SELECT m from Movie m ORDER BY imdbRating DESC"),
-@NamedQuery(name="Movie.sortByYear", query="SELECT m from Movie m ORDER BY year DESC"),
-@NamedQuery(name="Movie.sortByImdbVotes", query="SELECT m from Movie m ORDER BY imdbVotes DESC"),
+@NamedQuery(name="Movie.sortByImdbRatings", query="SELECT m from Movie m ORDER BY m.imdbRating DESC"),
+@NamedQuery(name="Movie.sortByYear", query="SELECT m from Movie m ORDER BY m.year DESC"),
+@NamedQuery(name="Movie.sortByImdbVotes", query="SELECT m from Movie m ORDER BY m.imdbVotes DESC"),
 @NamedQuery(name="Movie.topRatedMovies", query="SELECT m from Movie m WHERE m.type=:pType AND m.imdbRating > :pLimit ORDER BY imdbRating DESC"),
 @NamedQuery(name="Movie.topRatedSeries", query="SELECT m from Movie m WHERE m.type=:pType AND m.imdbRating > :pLimit ORDER BY imdbRating DESC")
 
