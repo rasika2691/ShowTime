@@ -17,7 +17,7 @@ section{
 }
 
 section.darker{
-	background-color: #fbfbfb;
+	background-color: #c1c1c1;
 }
 
 section header{
@@ -167,6 +167,22 @@ a:focus{
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
 }
+
+
+
+/***
+SEARCH BAR
+*****/
+.search-bar{
+padding: 75px 0;
+	background-color: #333;
+	color: #fff;
+}
+
+.search-bar p{
+	color: #fff;
+}
+
 
 /***
 SERVICES
